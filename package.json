@@ -1,0 +1,24 @@
+{
+  "name": "fluent-strings",
+  "version": "1.0.0",
+  "description": "parse jsx files to pull out translated strings and their localization keys into ftl format",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "l10n"
+  ],
+  "author": "hkasemir",
+  "license": "ISC",
+  "dependencies": {
+    "gulp-intercept": "^0.1.0",
+    "gulp-util": "^3.0.8",
+    "jsx-ast-utils": "^2.0.1",
+    "lodash": "^4.17.4",
+    "vinyl-source-stream": "^2.0.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
