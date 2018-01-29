@@ -14,7 +14,7 @@ function findChildNode(localizedNode) {
 
 function pullLocalizedDOMAttributes(node) {
   const localizedProps = astUtils.getPropValue(
-    astUtils.getProp(node.openingElement.attributes, 'data-translate-props')
+    astUtils.getProp(node.openingElement.attributes, 'data-l10n-attrs')
   );
 
   return localizedProps.reduce((ftlRules, propName) => {
@@ -25,7 +25,7 @@ function pullLocalizedDOMAttributes(node) {
 
 function findTranslatableMessages(node, localizationKey) {
   const childNode = findChildNode(node);
-  if (astUtils.hasProp(childNode.openingElement.attributes, 'data-translate-props')) {
+  if (astUtils.hasProp(childNode.openingElement.attributes, 'data-l10n-attrs')) {
     return pullLocalizedDOMAttributes(childNode);
   }
   const childText = _.get(childNode, 'children[0]', {});
@@ -34,7 +34,7 @@ function findTranslatableMessages(node, localizationKey) {
     const componentType = _.get(childNode, 'openingElement.name.name');
     const error = `
      STRING_IMPORT_ERROR: no translated props or message provided to ${componentType}
-     - add a "data-translated-props" array with the propNames of the DOM Attributes to be translated
+     - add a "data-l10n-attrs" array with the propNames of the DOM Attributes to be translated
      - or pass in a non-empty translatable message as a child
      - check the component with the localization ID "${localizationKey}"
 `;

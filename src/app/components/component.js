@@ -48,6 +48,7 @@ export default class CityDetails extends React.Component {
               <Localized id='CityDetails_newLocationButton'>
                 <UreactButton
                   styleName='create-button'
+                  data-l10n-attrs={['label']}
                   onClick={() => this.setState({showModal: true})}
                   type='primary'
                   size='large'
@@ -55,15 +56,6 @@ export default class CityDetails extends React.Component {
                 />
               </Localized>
               <Localized id='CityDetails_newLocationButton2'>
-                <UreactButton
-                  styleName='create-button'
-                  onClick={() => this.setState({showModal: true})}
-                  type='primary'
-                  size='large'
-                  label='Create New Location'
-                />
-              </Localized>
-              <Localized id='CityDetails_newLocationButton4'>
                 <UreactButton
                   styleName='create-button'
                   onClick={() => this.setState({showModal: true})}
@@ -119,7 +111,7 @@ export default cssModule(styles)(
         <Localized id='NotAuthorized_testInput'>
           <input
             placeholder='test placeholder'
-            data-translate-props={['placeholder']}
+            data-l10n-attrs={['placeholder']}
           />
         </Localized>
         <Localized id='NotAuthorized_talkToAdmin'>
