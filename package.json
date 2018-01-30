@@ -12,6 +12,7 @@
   "author": "hkasemir",
   "license": "ISC",
   "dependencies": {
+    "flow-jsx-walk": "^1.0.0",
     "gulp-intercept": "^0.1.0",
     "gulp-util": "^3.0.8",
     "jsx-ast-utils": "^2.0.1",
